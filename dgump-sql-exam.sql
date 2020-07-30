@@ -48,7 +48,9 @@ FROM naep
 WHERE year = 2000;
 
 -- 7
-
+SELECT state AS below_average_states_y2000
+FROM naep
+WHERE 
 
 
 
