@@ -27,6 +27,7 @@ GROUP BY
    state 
 ORDER BY
    state ASC;
+
 -- 4
 SELECT
    state,
@@ -61,6 +62,7 @@ FROM
    naep 
 WHERE
    year = 2000;
+
 -- 7
 SELECT
    state below_average_states_y2000 
