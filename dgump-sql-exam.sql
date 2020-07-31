@@ -18,9 +18,9 @@ FROM
 SELECT
    state,
    COUNT(*),
-   AVG(avg_math_4_score) AS avg_avg_math4,
-   MIN(avg_math_4_score) AS MIN_avg_math4,
-   MAX(avg_math_4_score) AS max_avg_math4 
+   AVG(avg_math_4_score) avg_avg_math4,
+   MIN(avg_math_4_score) min_avg_math4,
+   MAX(avg_math_4_score) max_avg_math4 
 FROM
    naep 
 GROUP BY
@@ -31,9 +31,9 @@ ORDER BY
 SELECT
    state,
    COUNT(*),
-   AVG(avg_math_4_score) AS avg_avg_math4,
-   MIN(avg_math_4_score) AS MIN_avg_math4,
-   MAX(avg_math_4_score) AS max_avg_math4 
+   AVG(avg_math_4_score) avg_avg_math4,
+   MIN(avg_math_4_score) min_avg_math4,
+   MAX(avg_math_4_score) max_avg_math4 
 FROM
    naep 
 GROUP BY
@@ -45,7 +45,7 @@ ORDER BY
 
 -- 5
 SELECT
-   state AS bottom_10_states,
+   state bottom_10_states,
    avg_math_4_score 
 FROM
    naep 
@@ -56,20 +56,20 @@ ORDER BY
 
 -- 6
 SELECT
-   ROUND(AVG(avg_math_4_score), 2) AS avg_math4_2000 
+   ROUND(AVG(avg_math_4_score), 2) avg_math4_2000 
 FROM
    naep 
 WHERE
    year = 2000;
 -- 7
 SELECT
-   state AS below_average_states_y2000 
+   state below_average_states_y2000 
 FROM
    naep 
 WHERE
    avg_math_4_score < ( 
 	   SELECT
-		  ROUND(AVG(avg_math_4_score), 2) AS avg_math4_2000 
+		  ROUND(AVG(avg_math_4_score), 2) avg_math4_2000 
 	   FROM
 		  naep 
 	   WHERE
@@ -78,7 +78,7 @@ WHERE
 
 -- 8
 SELECT
-   state as scores_missing_y2000,
+   state scores_missing_y2000,
    avg_math_4_score 
 FROM
    naep 
